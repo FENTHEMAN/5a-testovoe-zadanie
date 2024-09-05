@@ -1,0 +1,9 @@
+{
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "printWidth": 90,
+    "semi": true,
+    "singleQuote": false,
+    "endOfLine": "crlf",
+    "tabWidth": 4
+}
