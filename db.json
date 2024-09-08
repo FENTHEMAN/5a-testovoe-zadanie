@@ -1,163 +1,164 @@
 {
-  "workers": [
-    {
-      "id": "5416",
-      "birthDate": "2007-02-14",
-      "city": "Novosib",
-      "isFree": true,
-      "hobbies": [
+    "workers": [
         {
-          "name": "Heartstone"
+            "id": "5416",
+            "birthDate": "2007-02-14",
+            "city": "Novosib",
+            "isFree": true,
+            "hobbies": [
+                {
+                    "name": "Heartstone"
+                },
+                {
+                    "name": "Pubg Mobile"
+                },
+                {
+                    "name": "Magic the Gathering"
+                }
+            ],
+            "inTeamDate": "2024-09-14",
+            "post": "Фронтенд разработчик",
+            "timeZone": "GMT+7",
+            "name": "Арсений",
+            "photo": "",
+            "description": "Меня зовут Арсений, я фронтенд разработчик с 1 летним опытом. Моя основная задача — это разработка веб приложений и сайтов. Я работаю в тесном взаимодействии с пользователями и разработчиками, стремясь сделать свой продукт максимально качественным. В свободное время продолжаю изучать новые технологии, чтобы повысить мою квалификацию, как разработчика, и приносить больше пользы для моей команды.",
+            "contacts": {
+                "email": "fen@fen.fen",
+                "telegram": "@senusfen",
+                "phone": "123456789",
+                "rocketChat": "@fen"
+            },
+            "workerTeam": {
+                "lead": "lead",
+                "deputy": "deputy",
+                "subdivision": "subdivision",
+                "teamName": "teamName"
+            },
+            "skills": [
+                {
+                    "name": "React"
+                },
+                {
+                    "name": "TypeScript"
+                },
+                {
+                    "name": "Next JS"
+                }
+            ],
+            "vacations": [
+                {
+                    "startDate": "2022-01-01",
+                    "endDate": "2022-01-15",
+                    "vacationName": "Летние Каникулы"
+                }
+            ]
         },
         {
-          "name": "Pubg Mobile"
+            "id": "4183",
+            "birthDate": "2007-02-14",
+            "city": "Novosib",
+            "isFree": true,
+            "hobbies": [
+                {
+                    "name": "Heartstone"
+                },
+                {
+                    "name": "Pubg Mobile"
+                },
+                {
+                    "name": "Magic the Gathering"
+                }
+            ],
+            "inTeamDate": "2024-09-14",
+            "post": "Frontend Developer",
+            "timeZone": "GMT+7",
+            "name": "Fen",
+            "photo": "",
+            "description": "Description",
+            "contacts": {
+                "email": "fen@fen.fen",
+                "telegram": "@senusfen",
+                "phone": "123456789",
+                "rocketChat": "@fen"
+            },
+            "workerTeam": {
+                "lead": "lead",
+                "deputy": "deputy",
+                "subdivision": "subdivision",
+                "teamName": "teamName"
+            },
+            "skills": [
+                {
+                    "name": "React"
+                },
+                {
+                    "name": "TypeScript"
+                },
+                {
+                    "name": "Next JS"
+                }
+            ],
+            "vacations": [
+                {
+                    "startDate": "2022-01-01",
+                    "endDate": "2022-01-15",
+                    "vacationName": "Летние Каникулы"
+                }
+            ]
         },
         {
-          "name": "Magic the Gathering"
+            "id": "61e6",
+            "birthDate": "2007-02-14",
+            "city": "Novosib",
+            "isFree": true,
+            "hobbies": [
+                {
+                    "name": "Heartstone"
+                },
+                {
+                    "name": "Pubg Mobile"
+                },
+                {
+                    "name": "Magic the Gathering"
+                }
+            ],
+            "inTeamDate": "2024-09-14",
+            "post": "Frontend Developer",
+            "timeZone": "GMT+7",
+            "name": "Fen",
+            "photo": "",
+            "description": "Description",
+            "contacts": {
+                "email": "fen@fen.fen",
+                "telegram": "@senusfen",
+                "phone": "123456789",
+                "rocketChat": "@fen"
+            },
+            "workerTeam": {
+                "lead": "lead",
+                "deputy": "deputy",
+                "subdivision": "subdivision",
+                "teamName": "teamName"
+            },
+            "skills": [
+                {
+                    "name": "React"
+                },
+                {
+                    "name": "TypeScript"
+                },
+                {
+                    "name": "Next JS"
+                }
+            ],
+            "vacations": [
+                {
+                    "startDate": "2022-01-01",
+                    "endDate": "2022-01-15",
+                    "vacationName": "Летние Каникулы"
+                }
+            ]
         }
-      ],
-      "inTeamDate": "2024-09-14",
-      "post": "Frontend Developer",
-      "timeZone": "GMT+7",
-      "name": "Fen",
-      "photo": "",
-      "description": "Description",
-      "contacts": {
-        "email": "fen@fen.fen",
-        "telegram": "@senusfen",
-        "phone": "123456789",
-        "rocketChat": "@fen"
-      },
-      "workerTeam": {
-        "lead": "lead",
-        "deputy": "deputy",
-        "subdivision": "subdivision",
-        "teamName": "teamName"
-      },
-      "skills": [
-        {
-          "name": "React"
-        },
-        {
-          "name": "TypeScript"
-        },
-        {
-          "name": "Next JS"
-        }
-      ],
-      "vacations": [
-        {
-          "startDate": "2022-01-01",
-          "endDate": "2022-01-15",
-          "vacationName": "Летние Каникулы"
-        }
-      ]
-    },
-    {
-      "id": "4183",
-      "birthDate": "2007-02-14",
-      "city": "Novosib",
-      "isFree": true,
-      "hobbies": [
-        {
-          "name": "Heartstone"
-        },
-        {
-          "name": "Pubg Mobile"
-        },
-        {
-          "name": "Magic the Gathering"
-        }
-      ],
-      "inTeamDate": "2024-09-14",
-      "post": "Frontend Developer",
-      "timeZone": "GMT+7",
-      "name": "Fen",
-      "photo": "",
-      "description": "Description",
-      "contacts": {
-        "email": "fen@fen.fen",
-        "telegram": "@senusfen",
-        "phone": "123456789",
-        "rocketChat": "@fen"
-      },
-      "workerTeam": {
-        "lead": "lead",
-        "deputy": "deputy",
-        "subdivision": "subdivision",
-        "teamName": "teamName"
-      },
-      "skills": [
-        {
-          "name": "React"
-        },
-        {
-          "name": "TypeScript"
-        },
-        {
-          "name": "Next JS"
-        }
-      ],
-      "vacations": [
-        {
-          "startDate": "2022-01-01",
-          "endDate": "2022-01-15",
-          "vacationName": "Летние Каникулы"
-        }
-      ]
-    },
-    {
-      "id": "61e6",
-      "birthDate": "2007-02-14",
-      "city": "Novosib",
-      "isFree": true,
-      "hobbies": [
-        {
-          "name": "Heartstone"
-        },
-        {
-          "name": "Pubg Mobile"
-        },
-        {
-          "name": "Magic the Gathering"
-        }
-      ],
-      "inTeamDate": "2024-09-14",
-      "post": "Frontend Developer",
-      "timeZone": "GMT+7",
-      "name": "Fen",
-      "photo": "",
-      "description": "Description",
-      "contacts": {
-        "email": "fen@fen.fen",
-        "telegram": "@senusfen",
-        "phone": "123456789",
-        "rocketChat": "@fen"
-      },
-      "workerTeam": {
-        "lead": "lead",
-        "deputy": "deputy",
-        "subdivision": "subdivision",
-        "teamName": "teamName"
-      },
-      "skills": [
-        {
-          "name": "React"
-        },
-        {
-          "name": "TypeScript"
-        },
-        {
-          "name": "Next JS"
-        }
-      ],
-      "vacations": [
-        {
-          "startDate": "2022-01-01",
-          "endDate": "2022-01-15",
-          "vacationName": "Летние Каникулы"
-        }
-      ]
-    }
-  ]
+    ]
 }
+

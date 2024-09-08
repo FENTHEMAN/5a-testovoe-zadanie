@@ -9,7 +9,7 @@ const isActiveStyled = ({ isActive }: NavLinkRenderProps) => {
 
 export const Header = () => {
     return (
-        <header className="mx-[var(--main-gor-pd)] my-[var(--main-ver-pd)] rounded-2xl px-5 w-auto h-20 flex items-center justify-between bg-[color:var(--color0)]">
+        <header className="mx-[var(--main-gor-pd)] my-[var(--main-ver-pd)] rounded-3xl px-5 w-auto h-20 flex items-center justify-between bg-[color:var(--color0)]">
             <h1 className="text-3xl font-bold text-slate-200">5A</h1>
             <nav className="flex gap-5">
                 {navLinks.map(link => (

@@ -4,6 +4,7 @@ import { createWorker, fen, getWorkerById } from "../../api/workers";
 import { useParams } from "react-router-dom";
 import { Worker } from "../../types/workers.types";
 import { WorkerInfoBlock } from "../../components/WorkerInfoBlock/WorkerInfoBlock";
+import { WorkerContactsBlock } from "../../components/WorkerContactsBlock/WorkerContactsBlock";
 
 export const WorkerPage = () => {
     const { workerId } = useParams();
@@ -60,8 +61,13 @@ export const WorkerPage = () => {
     };
 
     return (
-        <main className="w-full flex flex-col gap-[var(--main-gor-pd)] px-[var(--main-gor-pd)] py-[var(--main-ver-pd)]">
-            {data && <WorkerInfoBlock worker={data} isLoading={isPending} />}
+        <main className="w-full flex flex-col gap-11 px-[var(--main-gor-pd)] py-[var(--main-ver-pd)]">
+            {data && (
+                <>
+                    <WorkerInfoBlock worker={data} isLoading={isPending} />
+                    <WorkerContactsBlock worker={data} isLoading={isPending} />
+                </>
+            )}
 
             {/* {isPending && <h1>Loading...</h1>}
             {error && <h1>{error.message}</h1>} */}
