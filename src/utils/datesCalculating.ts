@@ -1,6 +1,6 @@
 import { VacationStatus } from "../types/vacationsCalculating.types";
 
-export const vacationDaysDiff = (startDate: string, endDate: string): number => {
+export const datesDaysDiff = (startDate: string, endDate: string): number => {
     const differenceInTime = Math.abs(
         Number(new Date(startDate)) - Number(new Date(endDate))
     );
@@ -9,11 +9,11 @@ export const vacationDaysDiff = (startDate: string, endDate: string): number => 
     return differenceInDays;
 };
 
-export const vacationYears = (startDate: string, endDate: string): [number, number] => {
+export const datesYears = (startDate: string, endDate: string): [number, number] => {
     return [new Date(startDate).getFullYear(), new Date(endDate).getFullYear()];
 };
 
-export const vacationStatus = (startDate: string, endDate: string): VacationStatus => {
+export const datesStatus = (startDate: string, endDate: string): VacationStatus => {
     const now = new Date();
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -27,14 +27,14 @@ export const vacationStatus = (startDate: string, endDate: string): VacationStat
     }
 };
 
-export const timeUntilVacation = (
+export const timeUntilDates = (
     startDate: string,
     endDate: string
 ): {
     days: number;
     hours: number;
 } => {
-    if (vacationStatus(startDate, endDate) === "willbe") {
+    if (datesStatus(startDate, endDate) === "willbe") {
         const now = new Date().getTime();
         const start = new Date(startDate).getTime();
 
@@ -52,4 +52,9 @@ export const timeUntilVacation = (
             hours: 0,
         };
     }
+};
+
+export const prettyDate = (dateString: string): string => {
+    const [year, month, day] = dateString.split("-");
+    return `${day}.${month}.${year}`;
 };

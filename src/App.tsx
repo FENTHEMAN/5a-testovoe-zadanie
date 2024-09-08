@@ -5,15 +5,19 @@ import { WorkerRoute } from "./routes/WorkerRoute";
 import { WorkerNotFound } from "./components/WorkerNotFound/WorkerNotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { getWorkers } from "./api/workers";
-import { Header } from "./components/Header/Header";
+import { RootLayout } from "./routes/RootLayout";
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <RootRoute />,
+        element: <RootLayout />,
         children: [
+            {
+                path: "/",
+                element: <RootRoute />,
+            },
             {
                 path: "/workers",
                 element: <WorkersRoute />,
@@ -37,7 +41,6 @@ const router = createBrowserRouter([
 export const App = () => {
     return (
         <QueryClientProvider client={queryClient}>
-            <Header />
             <RouterProvider router={router} />
         </QueryClientProvider>
     );

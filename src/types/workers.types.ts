@@ -1,34 +1,45 @@
-export type Contacts = {
+export interface Contacts {
     email: string;
     telegram: string;
     phone: string;
     rocketChat: string;
-};
+}
 
-export type WorkerTeam = {
+export interface WorkerTeam {
     lead: string;
     deputy: string;
     subdivision: string;
     teamName: string;
-};
+}
 
-export type Skill = {
-    id: string;
+export interface Skill {
     name: string;
-};
+}
 
-export type Vacation = {
-    id: string;
+export interface Hobby {
+    name: string;
+}
+
+export interface Vacation {
     startDate: string;
     endDate: string;
     vacationName: string;
-};
+}
 
-export type Worker = {
-    id: string;
+export interface Worker {
+    id?: string;
     name: string;
+    isFree: boolean;
+    description: string;
+    timeZone: string;
+    city: string;
+    birthDate: string;
+    inTeamDate: string;
+    post: string;
+    photo: string;
     contacts: Contacts;
     workerTeam: WorkerTeam;
     skills: Skill[];
     vacations: Vacation[];
-};
+    hobbies: Hobby[];
+}

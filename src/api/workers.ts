@@ -1,4 +1,5 @@
 import { api } from "./api";
+import { Worker } from "../types/workers.types";
 
 const URL = "http://localhost:3000/workers";
 
@@ -55,40 +56,55 @@ export const deleteWorker = async (id: string): Promise<Worker> => {
     }
 };
 
-// const fen = {
-//     name: "Fen",
-//     contacts: {
-//         email: "fen@fen.fen",
-//         telegram: "@senusfen",
-//         phone: "123456789",
-//         rocketChat: "@fen",
-//     },
-//     workerTeam: {
-//         lead: "lead",
-//         deputy: "deputy",
-//         subdivision: "subdivision",
-//         teamName: "teamName",
-//     },
-//     skills: [
-//         {
-//             id: "1",
-//             name: "React",
-//         },
-//         {
-//             id: "2",
-//             name: "TypeScript",
-//         },
-//         {
-//             id: "3",
-//             name: "Next JS",
-//         },
-//     ],
-//     vacations: [
-//         {
-//             id: "1",
-//             startDate: "2022-01-01",
-//             endDate: "2022-01-15",
-//             vacationName: "Летние Каникулы",
-//         },
-//     ],
-// };
+export const fen: Worker = {
+    birthDate: "2007-02-14",
+    city: "Novosib",
+    isFree: true,
+    hobbies: [
+        {
+            name: "Heartstone",
+        },
+        {
+            name: "Pubg Mobile",
+        },
+        {
+            name: "Magic the Gathering",
+        },
+    ],
+    inTeamDate: "2024-09-14",
+    post: "Frontend Developer",
+    timeZone: "GMT+7",
+    name: "Fen",
+    photo: "",
+    description: "Description",
+    contacts: {
+        email: "fen@fen.fen",
+        telegram: "@senusfen",
+        phone: "123456789",
+        rocketChat: "@fen",
+    },
+    workerTeam: {
+        lead: "lead",
+        deputy: "deputy",
+        subdivision: "subdivision",
+        teamName: "teamName",
+    },
+    skills: [
+        {
+            name: "React",
+        },
+        {
+            name: "TypeScript",
+        },
+        {
+            name: "Next JS",
+        },
+    ],
+    vacations: [
+        {
+            startDate: "2022-01-01",
+            endDate: "2022-01-15",
+            vacationName: "Летние Каникулы",
+        },
+    ],
+};
