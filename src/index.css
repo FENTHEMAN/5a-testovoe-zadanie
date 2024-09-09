@@ -11,6 +11,7 @@
     --color2: rgb(78, 184, 152);
     --color3: rgba(231, 255, 245, 0.828);
     --color4: rgba(239, 239, 239, 0.952);
+    --color5: rgba(194, 240, 193, 0.956);
 }
 
 * {
@@ -20,7 +21,8 @@
 }
 
 p,
-a {
+a,
+span {
     font-weight: 300;
     font-size: 16px;
 }

@@ -1,60 +1,32 @@
 {
+    "teams": [
+        {
+            "name": "Отдел разработки web3 продуктов",
+            "link": "/workers",
+            "subdivisions": [
+                {
+                    "name": "Фронтенд разработка",
+                    "link": "/workers",
+                    "leads": [
+                        {
+                            "name": "Сан Саныч",
+                            "link": "/workers"
+                        }
+                    ],
+                    "deputies": [
+                        {
+                            "name": "Михал Михалыч",
+                            "link": "/workers"
+                        }
+                    ]
+                }
+            ],
+            "id": "77ec"
+        }
+    ],
     "workers": [
         {
-            "id": "5416",
-            "birthDate": "2007-02-14",
-            "city": "Novosib",
-            "isFree": true,
-            "hobbies": [
-                {
-                    "name": "Heartstone"
-                },
-                {
-                    "name": "Pubg Mobile"
-                },
-                {
-                    "name": "Magic the Gathering"
-                }
-            ],
-            "inTeamDate": "2024-09-14",
-            "post": "Фронтенд разработчик",
-            "timeZone": "GMT+7",
-            "name": "Арсений",
-            "photo": "",
-            "description": "Меня зовут Арсений, я фронтенд разработчик с 1 летним опытом. Моя основная задача — это разработка веб приложений и сайтов. Я работаю в тесном взаимодействии с пользователями и разработчиками, стремясь сделать свой продукт максимально качественным. В свободное время продолжаю изучать новые технологии, чтобы повысить мою квалификацию, как разработчика, и приносить больше пользы для моей команды.",
-            "contacts": {
-                "email": "fen@fen.fen",
-                "telegram": "@senusfen",
-                "phone": "123456789",
-                "rocketChat": "@fen"
-            },
-            "workerTeam": {
-                "lead": "lead",
-                "deputy": "deputy",
-                "subdivision": "subdivision",
-                "teamName": "teamName"
-            },
-            "skills": [
-                {
-                    "name": "React"
-                },
-                {
-                    "name": "TypeScript"
-                },
-                {
-                    "name": "Next JS"
-                }
-            ],
-            "vacations": [
-                {
-                    "startDate": "2022-01-01",
-                    "endDate": "2022-01-15",
-                    "vacationName": "Летние Каникулы"
-                }
-            ]
-        },
-        {
-            "id": "4183",
+            "id": "538a",
             "birthDate": "2007-02-14",
             "city": "Novosib",
             "isFree": true,
@@ -82,10 +54,22 @@
                 "rocketChat": "@fen"
             },
             "workerTeam": {
-                "lead": "lead",
-                "deputy": "deputy",
-                "subdivision": "subdivision",
-                "teamName": "teamName"
+                "deputy": {
+                    "link": "/workers/4183",
+                    "name": "Михал Михалыч"
+                },
+                "lead": {
+                    "link": "/workers/4183",
+                    "name": "Сан Саныч"
+                },
+                "subdivision": {
+                    "link": "/workers",
+                    "name": "Фронтенд разработка"
+                },
+                "teamName": {
+                    "link": "/workers",
+                    "name": "Отдел разработки web3 продуктов"
+                }
             },
             "skills": [
                 {
@@ -95,19 +79,58 @@
                     "name": "TypeScript"
                 },
                 {
+                    "name": "Архитектурный стиль FSD"
+                },
+                {
                     "name": "Next JS"
+                },
+                {
+                    "name": "Zustand"
+                },
+                {
+                    "name": "Адаптивная и кросбраузерная вертска"
+                },
+                {
+                    "name": "EcmaScript 6"
+                },
+                {
+                    "name": "Разработка Telegram WebApp"
+                },
+                {
+                    "name": "Firebase"
+                },
+                {
+                    "name": "Rust"
+                },
+                {
+                    "name": "Redux Toolkit"
                 }
             ],
             "vacations": [
                 {
-                    "startDate": "2022-01-01",
-                    "endDate": "2022-01-15",
+                    "startDate": "2024-09-09",
+                    "endDate": "2024-09-14",
+                    "vacationName": "St. Peterbugh"
+                },
+                {
+                    "startDate": "2024-09-23",
+                    "endDate": "2024-11-14",
+                    "vacationName": "Chill"
+                },
+                {
+                    "startDate": "2026-08-09",
+                    "endDate": "2026-09-14",
+                    "vacationName": "Летние Каникулы"
+                },
+                {
+                    "startDate": "2026-05-09",
+                    "endDate": "2026-09-14",
                     "vacationName": "Летние Каникулы"
                 }
             ]
         },
         {
-            "id": "61e6",
+            "id": "c405",
             "birthDate": "2007-02-14",
             "city": "Novosib",
             "isFree": true,
@@ -135,10 +158,87 @@
                 "rocketChat": "@fen"
             },
             "workerTeam": {
-                "lead": "lead",
-                "deputy": "deputy",
-                "subdivision": "subdivision",
-                "teamName": "teamName"
+                "deputy": {
+                    "link": "/workers/4183",
+                    "name": "Михал Михалыч"
+                },
+                "lead": {
+                    "link": "/workers/4183",
+                    "name": "Сан Саныч"
+                },
+                "subdivision": {
+                    "link": "/workers",
+                    "name": "Фронтенд разработка"
+                },
+                "teamName": {
+                    "link": "/workers",
+                    "name": "Отдел разработки web3 продуктов"
+                }
+            },
+            "skills": [
+                {
+                    "name": "React"
+                },
+                {
+                    "name": "TypeScript"
+                },
+                {
+                    "name": "Next JS"
+                }
+            ],
+            "vacations": [
+                {
+                    "startDate": "2022-01-01",
+                    "endDate": "2022-01-15",
+                    "vacationName": "Летние Каникулы"
+                }
+            ]
+        },
+        {
+            "id": "8f5f",
+            "birthDate": "2007-02-14",
+            "city": "Novosib",
+            "isFree": true,
+            "hobbies": [
+                {
+                    "name": "Heartstone"
+                },
+                {
+                    "name": "Pubg Mobile"
+                },
+                {
+                    "name": "Magic the Gathering"
+                }
+            ],
+            "inTeamDate": "2024-09-14",
+            "post": "Frontend Developer",
+            "timeZone": "GMT+7",
+            "name": "Fen",
+            "photo": "",
+            "description": "Description",
+            "contacts": {
+                "email": "fen@fen.fen",
+                "telegram": "@senusfen",
+                "phone": "123456789",
+                "rocketChat": "@fen"
+            },
+            "workerTeam": {
+                "deputy": {
+                    "link": "/workers/4183",
+                    "name": "Михал Михалыч"
+                },
+                "lead": {
+                    "link": "/workers/4183",
+                    "name": "Сан Саныч"
+                },
+                "subdivision": {
+                    "link": "/workers",
+                    "name": "Фронтенд разработка"
+                },
+                "teamName": {
+                    "link": "/workers",
+                    "name": "Отдел разработки web3 продуктов"
+                }
             },
             "skills": [
                 {

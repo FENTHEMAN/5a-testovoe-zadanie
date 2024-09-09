@@ -22,7 +22,7 @@ export const WorkerInfoBlock = ({
                     <WorkerPhoto binaryString={worker.photo} isFree={worker.isFree} />
                     <div className="flex flex-col gap-2 pt-2">
                         <div className="flex items-center gap-3">
-                            <h1 className="text-3xl font-semibold">{worker.name}</h1>
+                            <h1 className="text-4xl font-semibold">{worker.name}</h1>
                             {worker.isFree ? (
                                 <span className="text-[var(--color0)] bg-[var(--color3)] py-1 px-4 rounded-md">
                                     Доступен

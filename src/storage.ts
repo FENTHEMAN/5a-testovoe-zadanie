@@ -71,3 +71,34 @@ export const contactColor: {
     rocketChat: "gradient-to-r from-red-200 to-red-400",
     phone: "gradient-to-r from-lime-300 to-green-500",
 };
+
+export const teamUnits: {
+    id: number;
+    teamUnit: "lead" | "deputy" | "subdivision" | "teamName";
+}[] = [
+    {
+        id: 1,
+        teamUnit: "lead",
+    },
+    {
+        id: 2,
+        teamUnit: "deputy",
+    },
+    {
+        id: 3,
+        teamUnit: "subdivision",
+    },
+    {
+        id: 4,
+        teamUnit: "teamName",
+    },
+];
+
+export const teamUnitName: {
+    [key: string]: string;
+} = {
+    lead: "Руководитель",
+    deputy: "Заместитель",
+    subdivision: "Подразделение",
+    teamName: "Название команды",
+};

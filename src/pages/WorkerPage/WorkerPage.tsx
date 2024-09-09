@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import { Worker } from "../../types/workers.types";
 import { WorkerInfoBlock } from "../../components/WorkerInfoBlock/WorkerInfoBlock";
 import { WorkerContactsBlock } from "../../components/WorkerContactsBlock/WorkerContactsBlock";
+import { WorkerTeamBlock } from "../../components/WorkerTeamBlock/WorkerTeamBlock";
+import { WorkerSkillsBlock } from "../../components/WorkerSkillsBlock/WorkerSkillsBlock";
+import { WorkerVacationBlock } from "../../components/WorkerVacationBlock/WorkerVacationBlock";
 
 export const WorkerPage = () => {
     const { workerId } = useParams();
@@ -61,11 +64,14 @@ export const WorkerPage = () => {
     };
 
     return (
-        <main className="w-full flex flex-col gap-11 px-[var(--main-gor-pd)] py-[var(--main-ver-pd)]">
+        <main className="w-full flex flex-col gap-9 px-[var(--main-gor-pd)] py-[var(--main-ver-pd)]">
             {data && (
                 <>
                     <WorkerInfoBlock worker={data} isLoading={isPending} />
                     <WorkerContactsBlock worker={data} isLoading={isPending} />
+                    <WorkerTeamBlock worker={data} isLoading={isPending} />
+                    <WorkerSkillsBlock worker={data} isLoading={isPending} />
+                    <WorkerVacationBlock worker={data} isLoading={isPending} />
                 </>
             )}
 

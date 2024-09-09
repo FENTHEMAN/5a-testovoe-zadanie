@@ -10,7 +10,7 @@ export const Contact = ({
 }) => {
     return (
         <button
-            className={`bg-${contactColor[socialName]} flex-auto flex rounded-full items-center justify-between py-2 px-4`}
+            className={`bg-${contactColor[socialName]} flex-auto flex rounded-full items-center justify-between py-[0.6rem] px-4`}
             onClick={() => copyClipboard(contact)}
         >
             <div className="flex gap-2">

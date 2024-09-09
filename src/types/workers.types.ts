@@ -6,10 +6,22 @@ export interface Contacts {
 }
 
 export interface WorkerTeam {
-    lead: string;
-    deputy: string;
-    subdivision: string;
-    teamName: string;
+    lead: {
+        name: string;
+        link: string;
+    };
+    deputy: {
+        name: string;
+        link: string;
+    };
+    subdivision: {
+        name: string;
+        link: string;
+    };
+    teamName: {
+        name: string;
+        link: string;
+    };
 }
 
 export interface Skill {

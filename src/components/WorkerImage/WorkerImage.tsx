@@ -18,7 +18,7 @@ export const WorkerPhoto = ({
                         alt="Oops..."
                     />
                 ) : (
-                    <p className="text-2xl">{"˶ᵔ ᵕ ᵔ˶"}</p>
+                    <p className="text-2xl">{"˶ˆ ᗜ ˆ˵"}</p>
                 )}
             </div>
         </div>

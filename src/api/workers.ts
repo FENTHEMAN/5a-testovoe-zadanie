@@ -84,10 +84,22 @@ export const fen: Worker = {
         rocketChat: "@fen",
     },
     workerTeam: {
-        lead: "lead",
-        deputy: "deputy",
-        subdivision: "subdivision",
-        teamName: "teamName",
+        deputy: {
+            link: "/workers/4183",
+            name: "Михал Михалыч",
+        },
+        lead: {
+            link: "/workers/4183",
+            name: "Сан Саныч",
+        },
+        subdivision: {
+            link: "/workers",
+            name: "Фронтенд разработка",
+        },
+        teamName: {
+            link: "/workers",
+            name: "Отдел разработки web3 продуктов",
+        },
     },
     skills: [
         {
