@@ -1,19 +1,9 @@
-import { Worker } from "../../types/workers.types";
 import { copyClipboard } from "../../utils/copyClipboard";
 import { prettyDate } from "../../utils/datesCalculating";
 import { WorkerPhoto } from "../WorkerImage/WorkerImage";
+import { Worker } from "../../types/workers.types";
 
-export const WorkerInfoBlock = ({
-    worker,
-    isLoading,
-}: {
-    worker: Worker;
-    isLoading: boolean;
-}) => {
-    if (isLoading) {
-        return <div>Загрузка...</div>;
-    }
-
+export const WorkerInfoBlock = ({ worker }: { worker: Worker }) => {
     return (
         <div className="w-full flex flex-col rounded-3xl shadow-[0px_1px_6px_3px_rgba(0,0,0,0.1)]">
             <div className="w-full h-36 bg-black rounded-t-3xl bg-gradient-to-r from-[var(--color1)] via-[var(--color2)] to-[var(--color2)]" />

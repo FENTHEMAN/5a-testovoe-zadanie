@@ -22,7 +22,8 @@
 
 p,
 a,
-span {
+span,
+label {
     font-weight: 300;
     font-size: 16px;
 }

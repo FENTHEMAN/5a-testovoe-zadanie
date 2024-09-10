@@ -1,4 +1,4 @@
-import { VacationStatus } from "../types/vacationsCalculating.types";
+import { VacationStatus } from "../types/dateCalculating.types";
 
 export const datesDaysDiff = (startDate: string, endDate: string): number => {
     const differenceInTime = Math.abs(
@@ -9,8 +9,14 @@ export const datesDaysDiff = (startDate: string, endDate: string): number => {
     return differenceInDays;
 };
 
-export const datesYears = (startDate: string, endDate: string): [number, number] => {
-    return [new Date(startDate).getFullYear(), new Date(endDate).getFullYear()];
+export const datesYears = (
+    startDate: string,
+    endDate: string
+): { startYear: number; endYear: number } => {
+    return {
+        startYear: new Date(startDate).getFullYear(),
+        endYear: new Date(endDate).getFullYear(),
+    };
 };
 
 export const datesStatus = (startDate: string, endDate: string): VacationStatus => {
@@ -32,24 +38,27 @@ export const timeUntilDates = (
     endDate: string
 ): {
     days: number;
-    hours: number;
+    months: number;
 } => {
     if (datesStatus(startDate, endDate) === "willbe") {
         const now = new Date().getTime();
         const start = new Date(startDate).getTime();
 
         const timeDiff = start - now;
-        const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
-        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+        const differenceInDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+        const months = Math.floor(differenceInDays / 30);
+        const days = differenceInDays % 30;
 
         return {
             days,
-            hours,
+            months,
         };
     } else {
         return {
             days: 0,
-            hours: 0,
+            months: 0,
         };
     }
 };
@@ -57,4 +66,33 @@ export const timeUntilDates = (
 export const prettyDate = (dateString: string): string => {
     const [year, month, day] = dateString.split("-");
     return `${day}.${month}.${year}`;
+};
+
+const months: {
+    [key: number]: string;
+} = {
+    1: "января",
+    2: "февраля",
+    3: "марта",
+    4: "апреля",
+    5: "мая",
+    6: "июня",
+    7: "июля",
+    8: "августа",
+    9: "сентября",
+    10: "октября",
+    11: "ноября",
+    12: "декабря",
+};
+
+export const startingDate = (dateString: string): string => {
+    const [, month, day] = dateString.split("-");
+
+    return `c ${Number(day)} ${months[Number(month)]}`;
+};
+
+export const endingDate = (dateString: string): string => {
+    const [, month, day] = dateString.split("-");
+
+    return `до ${Number(day)} ${months[Number(month)]}`;
 };
