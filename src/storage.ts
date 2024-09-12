@@ -1,3 +1,5 @@
+import { URLSearchParamsInit } from "react-router-dom";
+
 export const navLinks: {
     id: number;
     title: string;
@@ -102,3 +104,36 @@ export const teamUnitName: {
     subdivision: "Подразделение",
     teamName: "Название команды",
 };
+
+export const defaultParams: URLSearchParamsInit = {
+    edit: "false",
+};
+
+export const timeZones: string[] = [
+    "UTC+3",
+    "UTC+4",
+    "UTC+5",
+    "UTC+6",
+    "UTC+7",
+    "UTC+8",
+    "UTC+9",
+    "UTC+10",
+    "UTC+11",
+    "UTC+12",
+    "UTC+13",
+    "UTC-1",
+    "UTC-2",
+    "UTC-3",
+    "UTC-4",
+    "UTC-5",
+    "UTC-6",
+    "UTC-7",
+    "UTC-8",
+];
+
+export const cities: string[] = [
+    "Москва",
+    "Санкт-Петербург",
+    "Новосибирск",
+    "Екатеринбург",
+];

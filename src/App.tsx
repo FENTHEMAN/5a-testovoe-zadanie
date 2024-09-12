@@ -40,8 +40,9 @@ const router = createBrowserRouter([
                         worker: queryClient.fetchQuery({
                             queryKey: ["worker"],
                             queryFn: async () => getWorkerById(params.workerId!),
-                            staleTime: 1000 * 60,
+                            staleTime: 1 * 60,
                         }),
+                        workerId: params.workerId!,
                     });
                 },
             },

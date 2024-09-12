@@ -1,7 +1,5 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { ChangeEvent, FormEvent, Suspense, useState } from "react";
-import { createWorker, fen, getWorkerById } from "../../api/workers";
-import { Await, useLoaderData } from "react-router-dom";
+import { Suspense } from "react";
+import { Await, useLoaderData, useSearchParams } from "react-router-dom";
 import { WorkerInfoBlock } from "../../components/WorkerInfoBlock/WorkerInfoBlock";
 import { WorkerContactsBlock } from "../../components/WorkerContactsBlock/WorkerContactsBlock";
 import { WorkerTeamBlock } from "../../components/WorkerTeamBlock/WorkerTeamBlock";
@@ -13,84 +11,91 @@ import { WorkerInfoBlockSkeketon } from "../../components/WorkerInfoBlock/Worker
 import { WorkerContactsBlockSkeleton } from "../../components/WorkerContactsBlock/WorkerContactsBlockSkeleton";
 import { WorkerTeamBlockSkeleton } from "../../components/WorkerTeamBlock/WorkerTeamBlockSkeleton";
 import { WorkerHobbiesBlockSkeleton } from "../../components/WorkerHobbiesBlock/WorkerHobbiesBlockSkeleton";
+import { defaultParams } from "../../storage";
+import { Worker } from "../../types/workers.types";
+import { WorkerSkillsBlockSkeleton } from "../../components/WorkerSkillsBlock/WorkerSkillsBlockSkeleton";
+
+export const useIsEdit = (): boolean => {
+    const [searchParams] = useSearchParams();
+    if (searchParams.get("edit") === "true") {
+        return true;
+    } else {
+        return false;
+    }
+};
 
 export const WorkerPage = () => {
-    // const queryClient = useQueryClient();
-    // const workerCreateMutation = useMutation({
-    //     mutationFn: (worker: Worker) => {
-    //         return createWorker(worker);
-    //     },
-    //     onSuccess: () => {
-    //         queryClient.invalidateQueries({ queryKey: ["workers"] });
-    //     },
-    // });
+    const [searchParams, setSearchParams] = useSearchParams(defaultParams);
 
-    // const [imageBase64, setImageBase64] = useState<string>("");
+    const isEdit = useIsEdit();
 
-    // const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    //     event.preventDefault();
+    console.log(isEdit);
 
-    //     fetch("http://localhost:3000/workers", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({ photo: imageBase64 }),
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => console.log(data))
-    //         .catch(error => console.error(error));
-    // };
-
-    // const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    //     const file = event.target.files?.[0];
-
-    //     if (file) {
-    //         const reader = new FileReader();
-
-    //         reader.onload = () => {
-    //             const imageBase64 = btoa(reader.result as string);
-    //             setImageBase64(imageBase64);
-    //         };
-
-    //         reader.readAsBinaryString(file);
-    //     }
-    // };
-    const { worker } = useLoaderData() as { worker: unknown };
+    const deferWorkerData = useLoaderData() as { worker: Worker; workerId: string };
 
     return (
         <main className="w-full flex flex-col gap-9 px-[var(--main-gor-pd)] py-[var(--main-ver-pd)]">
             <Suspense fallback={<WorkerInfoBlockSkeketon />}>
-                <Await resolve={worker}>
-                    {resolvedWorker => <WorkerInfoBlock worker={resolvedWorker} />}
+                <Await resolve={deferWorkerData}>
+                    {resolvedDeferWorkerData => {
+                        return (
+                            <WorkerInfoBlock
+                                workerId={resolvedDeferWorkerData.workerId}
+                            />
+                        );
+                    }}
                 </Await>
             </Suspense>
             <Suspense fallback={<WorkerContactsBlockSkeleton />}>
-                <Await resolve={worker}>
-                    {resolvedWorker => <WorkerContactsBlock worker={resolvedWorker} />}
+                <Await resolve={deferWorkerData}>
+                    {resolvedDeferWorkerData => (
+                        <WorkerContactsBlock
+                            workerId={resolvedDeferWorkerData.workerId}
+                        />
+                    )}
                 </Await>
             </Suspense>
             <Suspense fallback={<WorkerTeamBlockSkeleton />}>
-                <Await resolve={worker}>
-                    {resolvedWorker => <WorkerTeamBlock worker={resolvedWorker} />}
+                <Await resolve={deferWorkerData}>
+                    {resolvedDeferWorkerData => (
+                        <WorkerTeamBlock workerId={resolvedDeferWorkerData.workerId} />
+                    )}
                 </Await>
             </Suspense>
-            <Suspense fallback={<WorkerContactsBlockSkeleton />}>
-                <Await resolve={worker}>
-                    {resolvedWorker => <WorkerSkillsBlock worker={resolvedWorker} />}
+            <Suspense fallback={<WorkerSkillsBlockSkeleton />}>
+                <Await resolve={deferWorkerData}>
+                    {resolvedDeferWorkerData => (
+                        <WorkerSkillsBlock workerId={resolvedDeferWorkerData.workerId} />
+                    )}
                 </Await>
             </Suspense>
             <Suspense fallback={<WorkerVacationBlockSkeleton />}>
-                <Await resolve={worker}>
-                    {resolvedWorker => <WorkerVacationBlock worker={resolvedWorker} />}
+                <Await resolve={deferWorkerData}>
+                    {resolvedDeferWorkerData => (
+                        <WorkerVacationBlock
+                            workerId={resolvedDeferWorkerData.workerId}
+                        />
+                    )}
                 </Await>
             </Suspense>
             <Suspense fallback={<WorkerHobbiesBlockSkeleton />}>
-                <Await resolve={worker}>
-                    {resolvedWorker => <WorkerHobbiesBlock worker={resolvedWorker} />}
+                <Await resolve={deferWorkerData}>
+                    {resolvedDeferWorkerData => (
+                        <WorkerHobbiesBlock workerId={resolvedDeferWorkerData.workerId} />
+                    )}
                 </Await>
             </Suspense>
-
+            <button
+                className="text-xl py-[10px] px-5 rounded-xl bg-[color:var(--color5)]"
+                onClick={() => {
+                    window.scrollTo(0, 0);
+                    setSearchParams(isEdit ? { edit: "false" } : { edit: "true" });
+                }}
+            >
+                {searchParams.get("edit") == "true"
+                    ? "Закончить редактирование"
+                    : "Отредактировать профиль"}
+            </button>
             {/* {isPending && <h1>Loading...</h1>}
             {error && <h1>{error.message}</h1>} */}
             {/* {data && <img src={imgBase64Part + data.photo} alt="" />} */}

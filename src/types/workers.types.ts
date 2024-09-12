@@ -40,18 +40,18 @@ export interface Vacation {
 
 export interface Worker {
     id?: string;
-    name: string;
-    isFree: boolean;
-    description: string;
-    timeZone: string;
-    city: string;
-    birthDate: string;
-    inTeamDate: string;
-    post: string;
-    photo: string;
-    contacts: Contacts;
-    workerTeam: WorkerTeam;
-    skills: Skill[];
-    vacations: Vacation[];
-    hobbies: Hobby[];
+    name?: string;
+    isFree?: boolean;
+    description?: string;
+    timeZone?: string;
+    city?: string;
+    birthDate?: string;
+    inTeamDate?: string;
+    post?: string;
+    photo?: string;
+    contacts?: Contacts;
+    workerTeam?: WorkerTeam;
+    skills?: Skill[];
+    vacations?: Vacation[];
+    hobbies?: Hobby[];
 }

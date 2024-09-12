@@ -37,5 +37,22 @@ body,
 html {
     width: 100%;
     min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url("./../public/images/calendar.svg");
+    width: 24px;
+    height: 24px;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    overflow: hidden;
+    background-image: url("./../public/images/arrow.svg");
+    background-position: 98% 50%;
+    background-repeat: no-repeat;
 }
 

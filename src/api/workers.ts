@@ -28,7 +28,7 @@ export const updateWorker = async (
     worker: Worker
 ): Promise<Worker | undefined> => {
     try {
-        const updatedWorker = await api("PUT", `${URL}/${id}`, worker);
+        const updatedWorker = await api("PATCH", `${URL}/${id}`, worker);
         return updatedWorker as Worker;
     } catch (e) {
         const error = e as Error;
