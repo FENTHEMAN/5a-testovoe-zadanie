@@ -44,16 +44,18 @@ export const WorkerPhoto = ({
     return (
         <div className="relative w-32 h-32 shrink-0 rounded-full shadow-[0px_0px_5px_2px_rgba(0,0,0,0.2)] border-[4.5px] border-white border-solid">
             {isFree && (
-                <div className="absolute -right-1 -top-1 bg-[color:var(--color2)] w-8 h-8 rounded-full border-[5px]  border-white" />
+                <div className="absolute -right-1 -top-1 bg-[color:var(--color2)] w-8 h-8 rounded-full border-[4px] z-10 border-white" />
             )}
             <div className="relative w-full h-full flex items-center justify-center shadow-[inset_0px_0px_3px_1px_rgba(0,0,0,0.1)] rounded-full">
-                <input
-                    className="absolute w-full h-full opacity-0"
-                    disabled={!isEdit}
-                    type="file"
-                    onChange={handleFileChange}
-                    accept=".jpg,.jpeg,.png,.webp"
-                />
+                {isEdit && (
+                    <input
+                        className="absolute cursor-pointer w-full h-full opacity-0"
+                        disabled={!isEdit}
+                        type="file"
+                        onChange={handleFileChange}
+                        accept=".jpg,.jpeg,.png,.webp"
+                    />
+                )}
                 {binaryString !== "" ? (
                     <img
                         className="w-full h-full object-cover rounded-full"

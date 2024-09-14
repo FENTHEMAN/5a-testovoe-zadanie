@@ -23,7 +23,8 @@
 p,
 a,
 span,
-label {
+label,
+textarea {
     font-weight: 300;
     font-size: 16px;
 }
@@ -41,9 +42,10 @@ html {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background-image: url("./../public/images/calendar.svg");
-    width: 24px;
-    height: 24px;
+    background-image: url("/images/calendar.svg");
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 }
 
 select {
@@ -51,7 +53,7 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     overflow: hidden;
-    background-image: url("./../public/images/arrow.svg");
+    background-image: url("/images/arrow.svg");
     background-position: 98% 50%;
     background-repeat: no-repeat;
 }

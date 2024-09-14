@@ -1,11 +1,12 @@
 import { copyClipboard } from "../../utils/copyClipboard";
 import { prettyDate } from "../../utils/datesCalculating";
-import { WorkerPhoto } from "../WorkerImage/WorkerImage";
-import { useIsEdit } from "../../pages/WorkerPage/WorkerPage";
+import { WorkerPhoto } from "../WorkerPhoto/WorkerPhoto";
+import { useIsEdit } from "../../hooks/useIsEdit";
 import { useQuery } from "@tanstack/react-query";
 import { getWorkerById } from "../../api/workers";
 import { WorkerInfoBlockSkeketon } from "./WorkerInfoBlockSkeketon";
 import { WorkerMainInfoForm } from "./WorkerMainInfoForm";
+import { WorkerInfoDescription } from "./WorkerInfoDescription";
 
 export const WorkerInfoBlock = ({ workerId }: { workerId: string }) => {
     const { data, isLoading } = useQuery({
@@ -15,7 +16,6 @@ export const WorkerInfoBlock = ({ workerId }: { workerId: string }) => {
 
     const isEdit = useIsEdit();
 
-    console.log(isEdit, data, isLoading, workerId);
     if (isLoading) return <WorkerInfoBlockSkeketon />;
     else
         return (
@@ -29,7 +29,7 @@ export const WorkerInfoBlock = ({ workerId }: { workerId: string }) => {
                             isFree={data!.isFree!}
                         />
                         {isEdit ? (
-                            <WorkerMainInfoForm />
+                            <WorkerMainInfoForm worker={data!} />
                         ) : (
                             <>
                                 <div className="flex flex-col gap-2 pt-2">
@@ -78,7 +78,7 @@ export const WorkerInfoBlock = ({ workerId }: { workerId: string }) => {
                     </div>
                     <div className="w-full">
                         {isEdit ? (
-                            <></>
+                            <WorkerInfoDescription worker={data!} />
                         ) : (
                             <>
                                 <p className="w-full text-left p-5 rounded-xl border-2 border-[var(--color4)] text-xl">

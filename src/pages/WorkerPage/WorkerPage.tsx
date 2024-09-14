@@ -14,15 +14,7 @@ import { WorkerHobbiesBlockSkeleton } from "../../components/WorkerHobbiesBlock/
 import { defaultParams } from "../../storage";
 import { Worker } from "../../types/workers.types";
 import { WorkerSkillsBlockSkeleton } from "../../components/WorkerSkillsBlock/WorkerSkillsBlockSkeleton";
-
-export const useIsEdit = (): boolean => {
-    const [searchParams] = useSearchParams();
-    if (searchParams.get("edit") === "true") {
-        return true;
-    } else {
-        return false;
-    }
-};
+import { useIsEdit } from "../../hooks/useIsEdit";
 
 export const WorkerPage = () => {
     const [searchParams, setSearchParams] = useSearchParams(defaultParams);

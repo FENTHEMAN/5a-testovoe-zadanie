@@ -65,6 +65,15 @@ export const contactImg: {
     phone: "phone.svg",
 };
 
+export const contactHeading: {
+    [key: string]: string;
+} = {
+    telegram: "Telegram",
+    email: "Элеткропочта",
+    rocketChat: "RocketChat",
+    phone: "Телефон",
+};
+
 export const contactColor: {
     [key: string]: string;
 } = {
