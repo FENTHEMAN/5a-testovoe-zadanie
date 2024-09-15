@@ -10,39 +10,11 @@ export const api = async (
             case "GET": {
                 const response = await fetch(url);
                 return await response.json();
+                break
             }
-            case "POST": {
+            default: {
                 const response = await fetch(url, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(body),
-                });
-                return await response.json();
-            }
-            case "PUT": {
-                const response = await fetch(url, {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(body),
-                });
-                return await response.json();
-            }
-            case "DELETE": {
-                const response = await fetch(url, {
-                    method: "DELETE",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
-                return await response.json();
-            }
-            case "PATCH": {
-                const response = await fetch(url, {
-                    method: "PATCH",
+                    method,
                     headers: {
                         "Content-Type": "application/json",
                     },
