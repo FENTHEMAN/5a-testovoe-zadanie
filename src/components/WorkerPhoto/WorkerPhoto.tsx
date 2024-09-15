@@ -1,9 +1,7 @@
 import { ChangeEvent } from "react";
 import { imgBase64Part } from "../../storage";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateWorker } from "../../api/workers";
 import { useParams } from "react-router-dom";
-import { Worker } from "../../types/workers.types";
+import { useWorkerMutationUpdate } from "../../hooks/useUpdateWorker";
 
 export const WorkerPhoto = ({
     binaryString,
@@ -15,16 +13,8 @@ export const WorkerPhoto = ({
     isEdit?: boolean;
 }) => {
     const { workerId } = useParams();
-    const queryClient = useQueryClient();
-    const workerUpdateMutation = useMutation({
-        mutationFn: (worker: Worker) => {
-            return updateWorker(workerId!, worker);
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["workers"] });
-            queryClient.invalidateQueries({ queryKey: ["worker", workerId] });
-        },
-    });
+
+    const workerUpdateMutation = useWorkerMutationUpdate(workerId!);
 
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];

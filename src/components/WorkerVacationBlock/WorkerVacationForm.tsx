@@ -1,10 +1,9 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Worker } from "../../types/workers.types";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useParams } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateWorker } from "../../api/workers";
 import * as yup from "yup";
+import { useWorkerMutationUpdate } from "../../hooks/useUpdateWorker";
+import { useParams } from "react-router-dom";
 
 export const WorkerVacationForm = ({
     setShow,
@@ -19,6 +18,10 @@ export const WorkerVacationForm = ({
         vacationName: yup.string().required(),
     });
 
+    const { workerId } = useParams();
+
+    const workerUpdateMutation = useWorkerMutationUpdate(workerId!);
+
     const {
         register,
         handleSubmit,
@@ -26,20 +29,6 @@ export const WorkerVacationForm = ({
         setValue,
     } = useForm({
         resolver: yupResolver(schema),
-    });
-
-    const { workerId } = useParams();
-
-    const queryClient = useQueryClient();
-
-    const workerUpdateMutation = useMutation({
-        mutationFn: (worker: Worker) => {
-            return updateWorker(workerId!, worker);
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["workers"] });
-            queryClient.invalidateQueries({ queryKey: ["worker", workerId] });
-        },
     });
 
     const onSubmit: SubmitHandler<{

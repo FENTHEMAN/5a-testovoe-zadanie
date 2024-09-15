@@ -3,9 +3,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Worker } from "../../types/workers.types";
 import { useParams } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateWorker } from "../../api/workers";
 import { contactHeading, contacts } from "../../storage";
+import { useWorkerMutationUpdate } from "../../hooks/useUpdateWorker";
 
 export const WorkerContactsForm = ({ worker }: { worker: Worker }) => {
     const schema = yup.object().shape({
@@ -44,17 +43,7 @@ export const WorkerContactsForm = ({ worker }: { worker: Worker }) => {
 
     const { workerId } = useParams();
 
-    const queryClient = useQueryClient();
-
-    const workerUpdateMutation = useMutation({
-        mutationFn: (worker: Worker) => {
-            return updateWorker(workerId!, worker);
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["workers"] });
-            queryClient.invalidateQueries({ queryKey: ["worker", workerId] });
-        },
-    });
+    const workerUpdateMutation = useWorkerMutationUpdate(workerId!);
 
     const onSubmit: SubmitHandler<{
         email?: string;

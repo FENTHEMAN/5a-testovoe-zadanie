@@ -1,23 +1,12 @@
 import { Worker } from "../../types/workers.types";
 import { useParams } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateWorker } from "../../api/workers";
 import { FormEvent, useEffect, useRef, useState } from "react";
+import { useWorkerMutationUpdate } from "../../hooks/useUpdateWorker";
 
 export const WorkerInfoDescription = ({ worker }: { worker: Worker }) => {
     const { workerId } = useParams();
 
-    const queryClient = useQueryClient();
-
-    const workerUpdateMutation = useMutation({
-        mutationFn: (worker: Worker) => {
-            return updateWorker(workerId!, worker);
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["workers"] });
-            queryClient.invalidateQueries({ queryKey: ["worker", workerId] });
-        },
-    });
+    const workerUpdateMutation = useWorkerMutationUpdate(workerId!);
 
     const handleInput = (e: FormEvent<HTMLTextAreaElement>) => {
         const target = e.currentTarget as HTMLTextAreaElement;

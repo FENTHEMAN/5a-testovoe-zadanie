@@ -1,23 +1,12 @@
-import { useParams } from "react-router-dom";
 import { Worker } from "../../types/workers.types";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateWorker } from "../../api/workers";
 import { useState } from "react";
+import { useWorkerMutationUpdate } from "../../hooks/useUpdateWorker";
+import { useParams } from "react-router-dom";
 
 export const WorkerSkillsEdit = ({ worker }: { worker: Worker }) => {
     const { workerId } = useParams();
 
-    const queryClient = useQueryClient();
-
-    const workerUpdateMutation = useMutation({
-        mutationFn: (worker: Worker) => {
-            return updateWorker(workerId!, worker);
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["workers"] });
-            queryClient.invalidateQueries({ queryKey: ["worker", workerId] });
-        },
-    });
+    const workerUpdateMutation = useWorkerMutationUpdate(workerId!);
 
     const handleClickAdd = () => {
         if (!input) return;

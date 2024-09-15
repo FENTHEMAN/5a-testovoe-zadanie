@@ -1,12 +1,13 @@
-import { contactColor, contactImg } from "../../storage";
+import { contactColor, contactImg, SocialName } from "../../storage";
 import { copyClipboard } from "../../utils/copyClipboard";
+import { formatPhoneNumber } from "../../utils/phoneFormated";
 
 export const Contact = ({
     contact,
     socialName,
 }: {
     contact: string;
-    socialName: string;
+    socialName: SocialName;
 }) => {
     return (
         <button
@@ -23,7 +24,9 @@ export const Contact = ({
                     src={`/images/${contactImg[socialName]}`}
                     alt="Soc"
                 />
-                <p className="text-left">{contact}</p>
+                <p className="text-left">
+                    {socialName !== "phone" ? contact : formatPhoneNumber(contact)}
+                </p>
             </div>
             <img className="w-5 h-5" src="/images/copy.svg" alt="Copy" />
         </button>

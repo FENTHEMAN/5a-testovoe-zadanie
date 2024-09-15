@@ -62,6 +62,9 @@
         },
         {
           "name": "Magic The Gathering"
+        },
+        {
+          "name": "Хоббихорсинг"
         }
       ],
       "inTeamDate": "2024-09-14",
@@ -72,21 +75,21 @@
       "description": "Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer Frontend Developer  Frontend Developer Frontend Developer  Frontend Developer 1",
       "contacts": {
         "email": "fen@fen.com",
-        "phone": "",
-        "telegram": "",
+        "phone": "89538763006",
+        "telegram": "https://t.me/sdfssss",
         "rocketChat": "https://chat.rocket.com/user/123132"
       },
       "workerTeam": {
         "lead": {
-          "name": "Тем Темыч",
+          "name": "Сан Саныч",
           "link": "/workers"
         },
         "deputy": {
-          "name": "Вадим Вадимыч",
+          "name": "Михал Михалыч",
           "link": "/workers"
         },
         "teamName": {
-          "name": "Отдел разработки web3 продуктов",
+          "name": "Отдел разработки web2 продуктов",
           "link": "/workers"
         },
         "subdivision": {
@@ -171,6 +174,11 @@
           "startDate": "2024-09-18",
           "endDate": "2024-09-16",
           "vacationName": "asdasd"
+        },
+        {
+          "startDate": "2024-09-19",
+          "endDate": "2028-06-28",
+          "vacationName": "Отдыхать хочу"
         }
       ]
     }

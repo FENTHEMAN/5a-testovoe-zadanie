@@ -1,16 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import { teamUnitName, teamUnits } from "../../storage";
 import { TeamUnit } from "../TeamUnit/TeamUnit";
-import { getWorkerById } from "../../api/workers";
 import { WorkerTeamBlockSkeleton } from "./WorkerTeamBlockSkeleton";
 import { WorkerTeamForm } from "./WorkerTeamForm";
 import { useIsEdit } from "../../hooks/useIsEdit";
+import { useWorker } from "../../hooks/useWorker";
 
 export const WorkerTeamBlock = ({ workerId }: { workerId: string }) => {
-    const { data, isLoading } = useQuery({
-        queryKey: ["worker", workerId],
-        queryFn: () => getWorkerById(workerId),
-    });
+    const { data, isLoading } = useWorker(workerId);
 
     const isEdit = useIsEdit();
 

@@ -32,8 +32,6 @@ export const vacationsSorting = (vacs: Vacation[]) => {
         }
     });
 
-    console.log(grouped);
-
     if (Object.keys(grouped).length < 3) {
         if (
             Object.keys(grouped).length === 2 &&

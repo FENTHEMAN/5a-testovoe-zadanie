@@ -1,3 +1,3 @@
 export const WorkerInfoBlockSkeketon = () => {
-    return <div>WorkerInfoBlockSkeketon</div>;
+    return <section>WorkerInfoBlockSkeketon</section>;
 };

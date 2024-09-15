@@ -3,9 +3,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { cities, timeZones } from "../../storage";
 import { useParams } from "react-router-dom";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateWorker } from "../../api/workers";
 import { Worker } from "../../types/workers.types";
+import { useWorkerMutationUpdate } from "../../hooks/useUpdateWorker";
 
 export const WorkerMainInfoForm = ({ worker }: { worker: Worker }) => {
     const schema = yup
@@ -38,17 +37,7 @@ export const WorkerMainInfoForm = ({ worker }: { worker: Worker }) => {
 
     const { workerId } = useParams();
 
-    const queryClient = useQueryClient();
-
-    const workerUpdateMutation = useMutation({
-        mutationFn: (worker: Worker) => {
-            return updateWorker(workerId!, worker);
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["workers"] });
-            queryClient.invalidateQueries({ queryKey: ["worker", workerId] });
-        },
-    });
+    const workerUpdateMutation = useWorkerMutationUpdate(workerId!);
 
     const onSubmit: SubmitHandler<{
         name: string;

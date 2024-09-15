@@ -1,3 +1,3 @@
 export const WorkerHobbiesBlockSkeleton = () => {
-    return <div>WorkerHobbiesBlockSkeleton</div>;
+    return <section>WorkerHobbiesBlockSkeleton</section>;
 };

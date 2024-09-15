@@ -1,17 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
 import { vacationsSorting } from "../../utils/vacationsSorting";
 import { VacationYearBlock } from "../VacationYearBlock/VacationYearBlock";
-import { getWorkerById } from "../../api/workers";
 import { WorkerVacationBlockSkeleton } from "./WorkerVacationBlockSkeleton";
 import { useIsEdit } from "../../hooks/useIsEdit";
 import { useState } from "react";
 import { WorkerVacationForm } from "./WorkerVacationForm";
+import { useWorker } from "../../hooks/useWorker";
 
 export const WorkerVacationBlock = ({ workerId }: { workerId: string }) => {
-    const { data, isLoading } = useQuery({
-        queryKey: ["worker", workerId],
-        queryFn: () => getWorkerById(workerId),
-    });
+    const { data, isLoading } = useWorker(workerId);
 
     const isEdit = useIsEdit();
     const [showForm, setShowForm] = useState<boolean>(false);

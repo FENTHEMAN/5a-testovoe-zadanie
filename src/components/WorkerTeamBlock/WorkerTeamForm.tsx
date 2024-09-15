@@ -1,11 +1,10 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Worker, WorkerTeam } from "../../types/workers.types";
-import { getTeams } from "../../api/teams";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useWorkerMutationUpdate } from "../../hooks/useUpdateWorker";
+import { useTeams } from "../../hooks/useTeams";
 import { useParams } from "react-router-dom";
-import { updateWorker } from "../../api/workers";
 
 export const WorkerTeamForm = ({ worker }: { worker: Worker }) => {
     const schema = yup.object().shape({
@@ -25,24 +24,11 @@ export const WorkerTeamForm = ({ worker }: { worker: Worker }) => {
         },
     });
 
-    const { data, isLoading } = useQuery({
-        queryKey: ["teams"],
-        queryFn: () => getTeams(),
-    });
+    const { data, isLoading } = useTeams();
 
     const { workerId } = useParams();
 
-    const queryClient = useQueryClient();
-
-    const workerUpdateMutation = useMutation({
-        mutationFn: (worker: Worker) => {
-            return updateWorker(workerId!, worker);
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["workers"] });
-            queryClient.invalidateQueries({ queryKey: ["worker", workerId] });
-        },
-    });
+    const workerUpdateMutation = useWorkerMutationUpdate(workerId!);
 
     const onSubmit: SubmitHandler<{
         lead: string;

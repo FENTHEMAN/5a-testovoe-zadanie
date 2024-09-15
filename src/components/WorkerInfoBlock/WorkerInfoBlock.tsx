@@ -2,24 +2,20 @@ import { copyClipboard } from "../../utils/copyClipboard";
 import { prettyDate } from "../../utils/datesCalculating";
 import { WorkerPhoto } from "../WorkerPhoto/WorkerPhoto";
 import { useIsEdit } from "../../hooks/useIsEdit";
-import { useQuery } from "@tanstack/react-query";
-import { getWorkerById } from "../../api/workers";
 import { WorkerInfoBlockSkeketon } from "./WorkerInfoBlockSkeketon";
 import { WorkerMainInfoForm } from "./WorkerMainInfoForm";
 import { WorkerInfoDescription } from "./WorkerInfoDescription";
+import { useWorker } from "../../hooks/useWorker";
 
 export const WorkerInfoBlock = ({ workerId }: { workerId: string }) => {
-    const { data, isLoading } = useQuery({
-        queryKey: ["worker", workerId],
-        queryFn: () => getWorkerById(workerId),
-    });
+    const { data, isLoading } = useWorker(workerId);
 
     const isEdit = useIsEdit();
 
     if (isLoading) return <WorkerInfoBlockSkeketon />;
     else
         return (
-            <div className="w-full flex flex-col rounded-3xl shadow-[0px_1px_6px_3px_rgba(0,0,0,0.1)]">
+            <section className="w-full flex flex-col rounded-3xl shadow-[0px_1px_6px_3px_rgba(0,0,0,0.1)]">
                 <div className="w-full h-36 bg-black rounded-t-3xl bg-gradient-to-r from-[var(--color1)] via-[var(--color2)] to-[var(--color2)]" />
                 <div className="w-full flex flex-col gap-[var(--main-ver-pd)] rounded-b-3xl p-[var(--main-ver-pd)]">
                     <div className="w-full flex flex-wrap gap-6">
@@ -92,6 +88,6 @@ export const WorkerInfoBlock = ({ workerId }: { workerId: string }) => {
                         )}
                     </div>
                 </div>
-            </div>
+            </section>
         );
 };

@@ -1,3 +1,3 @@
 export const WorkerTeamBlockSkeleton = () => {
-    return <div>WorkerTeamBlockSkeleton</div>;
+    return <section>WorkerTeamBlockSkeleton</section>;
 };

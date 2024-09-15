@@ -34,9 +34,11 @@ export const navLinks: {
 
 export const imgBase64Part = "data:image/png;base64,";
 
+export type SocialName = "email" | "telegram" | "rocketChat" | "phone";
+
 export const contacts: {
     id: number;
-    socialName: "email" | "telegram" | "rocketChat" | "phone";
+    socialName: SocialName;
 }[] = [
     {
         id: 1,
