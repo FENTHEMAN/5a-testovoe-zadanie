@@ -28,7 +28,7 @@ export const Header = () => {
                 className="text-slate-200 text-xl"
                 style={isActiveStyled}
             >
-                Фенус Фен
+                Workers
             </NavLink>
         </header>
     );
